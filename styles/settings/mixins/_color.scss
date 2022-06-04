@@ -1,0 +1,17 @@
+@mixin set_xcolor($selector, $property) {
+    $list: map-keys($map: $cst-colors);
+
+    @each $theme in $list {
+        @if($selector ==&) {
+            &-#{$theme} {
+                #{$property}: getColor($theme);
+            }
+        }
+
+        @else {
+            .#{$selector}-#{$theme} {
+                #{$property}: getColor($theme);
+            }
+        }
+    }
+}
