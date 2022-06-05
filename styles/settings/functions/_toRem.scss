@@ -8,7 +8,7 @@
     @return $value;
 }
 
-@function remCalc($values, $base-value: $body-font_size) {
+@function toRem($values, $base-value: $body-font_size) {
     $max: length($values);
     @if $max == 1 { @return convert-to-rem(nth($values, 1), $base-value); }
     $remValues: ();
